@@ -1,0 +1,451 @@
+body{
+	font-weight:400;
+	color:$primary;
+	background:white;
+}
+main{
+	position:relative;
+}
+
+section{
+	padding:160px 0;
+}
+
+/* ——————————————————————
+
+BUTTONS
+
+——————————————————————— */
+.btn-group{
+	> *{
+		display:inline-block;
+		margin-right:12px;
+		&:last-child{
+			margin-right:0;
+		}
+	}
+}
+.btn{
+	height:40px;
+
+}
+.btn-apply{
+	height:44px;
+	padding:0 1.25em;
+	font-size:15px;
+	line-height:44px;
+	font-weight:700;
+	background:$orange;
+	color:white;
+	border-radius:0 15px 0 15px;
+
+}
+.btn-primary{
+	height:40px;
+	padding:0 1.5em;
+	font-size:14px;
+	line-height:40px;
+	font-weight:600;
+	background:white;
+	color:$primary;
+	border:0.5px solid rgba(0,0,0,0.1);
+	border-radius:0 15px 0 15px;
+	box-shadow:0 1px 2px 0 rgba(0,0,0,0.3);
+	@include transition(all 0.6s $easeOutExpo);
+	&.white{
+		background:white;
+	}
+	&.orange{
+		background:$orange;
+	  color:white;
+	}
+	i{
+		color:$orange;
+		margin-right:2px;
+	}
+	&:hover{
+		box-shadow:0 3px 6px 0 rgba(0,0,0,0.3);
+
+	}
+}
+
+/* ——————————————————————
+
+HEADER
+
+——————————————————————— */
+header{
+	z-index:8;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:80px;
+	padding:0 0 0 30px;
+	background:white;
+	box-shadow:0 0 8px 0 rgba(0,0,0,0.25);
+	.logo-header{
+		svg{
+			height:22px;
+			width:auto;
+		}
+	}
+	a{
+		color:$primary;
+		font-size:15px;
+		font-weight:600;
+		letter-spacing:-0.025em;
+		margin-right:30px;
+	}
+	.nav-btn {
+	  position: relative;
+	  z-index: 1020;
+	  width:80px;
+	  height: 80px;
+	  cursor: pointer;
+	  background:$primary;
+	  .nav-btn_inner{
+	  	position:relative;
+	  	width: 28px;
+	  	height: 16px;
+	  }
+	  span {
+		  height: 2px;
+		  width: 28px;
+		  background: white;
+		  position: absolute;
+		  z-index: 4;
+		  display: block;
+		  -webkit-backface-visibility: hidden;
+		  @include transform(rotate(0));
+		  @include transition(all 0.4s $easeOutExpo);
+		  &:nth-child(1) {
+			  top: 0;
+			}
+			&:nth-child(2) {
+			  top: 7px;
+			}
+			&:nth-child(3) {
+			  bottom: 0;
+			}
+		}
+		&.open{
+			span{
+				&:nth-child(1) {
+				  top: 8px;
+				  @include transform(rotate(-45deg));
+				}
+				&:nth-child(2) {
+				  opacity: 0;
+				}
+				&:nth-child(3) {
+				  bottom: 8px;
+				  @include transform(rotate(45deg));
+				}
+			}
+		}
+	}
+}
+
+/* ——————————————————————
+
+HERO
+
+——————————————————————— */
+#hero{
+	position:relative;
+	width:100%;
+	height:calc(100vh - 60px);
+	min-height:400px;
+	background:$primary;
+	color:white;
+	overflow:hidden;
+	.hero_sections{
+		z-index:2;
+		position:absolute;
+		width:900px;
+		margin-top:80px;
+		color:white;
+		a{
+			display:block;
+			width:100%;
+			cursor:pointer;
+			color:white;
+		}
+		.col--2{
+			@include transition(all 0.6s $easeOutExpo);
+			&:hover{
+				width:52%;
+				i{
+					&.fa-chevron-left{
+						left:-50px;
+						animation-duration: 0.4s;
+					  animation-name: hover-arrow-left;
+					}
+					&.fa-chevron-right{
+						right:-50px;;
+						animation-duration: 0.4s;
+					  animation-name: hover-arrow-right;
+					}
+				}
+			}
+			&:first-child{
+				&:after{
+					content:"";
+					display:block;
+					height:140px;
+					width:1px;
+					background:$orange;
+					position: absolute;
+			    left: 100%;
+			    transform: translateX(-50%);
+				}
+			}
+		}
+	}
+	.hero_sections--text{
+		h2{
+			display:inline-block;
+			position:relative;
+		}
+		h3{
+			text-indent:6px;
+		}
+		i{
+			position:absolute;
+			bottom:16px;
+			color:$orange;
+			font-size:50px;
+			@include transition(all 0.6s $easeOutExpo);
+			&.fa-chevron-left{
+				left:-45px;
+			}
+			&.fa-chevron-right{
+				right:-45px;
+			}
+		}
+	}
+	video{
+		z-index:0;
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		object-fit: cover;
+		@include opacity(0.35);
+	}
+	
+}
+
+@keyframes hover-arrow-left {
+  0% {
+  	@include opacity(1);
+    @include transform(translateX(0));
+  }
+  25% {
+  	@include opacity(0);
+    @include transform(translateX(-25px));
+  }
+  50% {
+    @include opacity(0);
+    @include transform(translateX(25px));
+  }
+  100% {
+  	@include opacity(1);
+    @include transform(translateX(0));
+  }
+}
+@keyframes hover-arrow-right {
+  0% {
+  	@include opacity(1);
+    @include transform(translateX(0));
+  }
+  25% {
+  	@include opacity(0);
+    @include transform(translateX(25px));
+  }
+  50% {
+    @include opacity(0);
+    @include transform(translateX(-25px));
+  }
+  100% {
+  	@include opacity(1);
+    @include transform(translateX(0));
+  }
+}
+
+/* ——————————————————————
+
+COMPANY OVERVIEW
+
+——————————————————————— */
+.company-overview_intro{
+	p{
+		max-width:500px;
+	}
+	
+}
+.company-overview_bullets{
+	width:180px;
+	.col{
+		padding:25px 0;
+		border-bottom:0.5px solid $border_light;
+		&:first-child{
+			padding-top:0;
+		}
+		&:last-child{
+			border:none;
+			padding-bottom:0;
+		}
+		h3{
+			font-size:14px;
+			margin-top:0.5em;
+			color:$secondary;
+		}
+	}
+}
+
+
+/* ——————————————————————
+
+DRIVER OVERVIEW
+
+——————————————————————— */
+.driver-overview{
+	background:$bg-light;
+	padding-bottom:0;
+}
+.driver-overview_truck {
+	img{
+		margin:60px auto 0 auto;
+	}
+}
+
+
+/* ——————————————————————
+
+FOOTER
+
+——————————————————————— */
+footer{
+	padding:90px 0 45px 0;
+	.footer_top{
+		padding-bottom:20px;
+		border-bottom:0.5px solid $border_light;
+	}
+	.footer_menu{
+		padding:20px 0;
+		a{
+			font-size:18px;
+			font-weight:600;
+			color:$primary;
+			margin-right:60px;
+		}
+		.footer_social{
+			a{
+				display:flex;
+				align-items:center;
+				justify-content: center;
+				width:40px;
+				height:40px;
+				border-radius:100%;
+				border:1px solid $border_light;
+				font-size:17px;
+				margin:0 0 0 10px;
+			}
+		}
+	}
+	.footer_map{
+		padding:100px 0;
+		background:$primary url('../img/chicago-map.jpg') no-repeat left center;
+		background-size:auto 100%;
+		font-size:15px;
+		h4{
+			font-weight:700;
+			text-transform:uppercase;
+			color:white;
+			margin-bottom:10px;
+		}
+		a{
+			color:white;
+			line-height:1.5;
+		}
+	}
+	.footer_bottom{
+		padding-top:20px;
+		font-size:15px;
+		color:$secondary;
+		a{
+			color:$secondary;
+			margin-left:30px;
+		}
+	}
+}
+
+
+
+/* ——————————————————————
+
+PAGE TRANSITIONS
+
+——————————————————————— */
+
+/* Drivers */
+.slide-drive-leave{
+  transform: translateX(0);
+  will-change: transform;
+}
+.slide-drive-leave-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-drive-leave-to{
+	transform: translateX(-100%);
+}
+
+.slide-drive-enter{
+  transform: translateX(100%);
+  will-change: transform;
+}
+.slide-drive-enter-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-drive-enter-to{
+	transform: translateX(0);
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+/* Shippers */
+.slide-ship-leave{
+  transform: translateX(0);
+  will-change: transform;
+}
+.slide-ship-leave-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-ship-leave-to{
+	transform: translateX(100%);
+}
+
+.slide-ship-enter{
+  transform: translateX(-100%);
+  will-change: transform;
+}
+.slide-ship-enter-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-ship-enter-to{
+	transform: translateX(0);
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+
+
+
+
