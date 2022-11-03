@@ -63,7 +63,7 @@ barba.init({
 });
 
 
-// update the scroll after entering a page
+// update the LocomotiveScroll after entering a page
 barba.hooks.after(() => {
   scroller.update();
 });
