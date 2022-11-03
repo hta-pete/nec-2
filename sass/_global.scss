@@ -446,6 +446,62 @@ PAGE TRANSITIONS
 }
 
 
+/* Home */
+.slide-home-leave{
+  transform: translateX(0);
+  will-change: transform;
+}
+.slide-home-leave-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-home-leave-to{
+	transform: translateX(100%);
+}
+
+.slide-home-enter{
+  transform: translateX(-100%);
+  will-change: transform;
+}
+.slide-home-enter-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-home-enter-to{
+	transform: translateX(0);
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+
+/* Home Left */
+.slide-home-left-leave{
+  transform: translateX(0);
+  will-change: transform;
+}
+.slide-home-left-leave-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-home-left-leave-to{
+	transform: translateX(-100%);
+}
+
+.slide-home-left-enter{
+  transform: translateX(100%);
+  will-change: transform;
+}
+.slide-home-left-enter-active{
+	@include transition(all 0.6s $easeOutExpo);
+}
+.slide-home-left-enter-to{
+	transform: translateX(0);
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+
 
 
 
