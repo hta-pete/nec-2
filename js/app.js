@@ -1,72 +1,82 @@
-// init LocomotiveScroll on page load
-let scroller = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true
-});
+/* Smooth Scrollbar js */
+let Scrollbar      = window.Scrollbar;
+const smoothScroll = document.querySelector('#scroll');
 
-// tell Barba to use the css plugin
-barba.use(barbaCss);
+const scrollOptions = {
+  'damping': 0.08
+}
+Scrollbar.init(smoothScroll, scrollOptions); 
 
-
-// init Barba
+/* Barba js for page transitions */
 barba.init({
   transitions: [
     {
-      name: 'slide-drive',
+      name: "slide-left",
       sync: true,
-      leave() {},
-      enter() {},
       from: {
-        namespace: 'home'
+        custom: ({ trigger }) => {
+          return trigger.classList && trigger.classList.contains('slide-left');
+        }
       },
-      to: {
-        namespace: 'drivers'
+      leave(data) {
+        return gsap.to(data.current.container, {
+          x: "-100%",
+          ease: "expo.out",
+          duration: 0.4
+        });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, {
+          x: "100%",
+          ease: "expo.out",
+          duration: 0.4
+        });
       }
     },
     {
-      name: 'slide-ship',
+      name: "slide-right",
       sync: true,
-      leave() {},
-      enter() {},
       from: {
-        namespace: 'home'
+        custom: ({ trigger }) => {
+          return trigger.classList && trigger.classList.contains('slide-right');
+        }
       },
-      to: {
-        namespace: 'shippers'
-      }
-    },
-    {
-      name: 'slide-home',
-      sync: true,
-      leave() {},
-      enter() {},
-      from: {
-        namespace: 'drivers'
+      leave(data) {
+        return gsap.to(data.current.container, {
+          x: "100%",
+          ease: "expo.out",
+          duration: 0.4
+        });
       },
-      to: {
-        namespace: 'home'
-      }
-    },
-    {
-      name: 'slide-home-left',
-      sync: true,
-      leave() {},
-      enter() {},
-      from: {
-        namespace: 'shippers'
-      },
-      to: {
-        namespace: 'home'
+      enter(data) {
+        return gsap.from(data.next.container, {
+          x: "-100%",
+          ease: "expo.out",
+          duration: 0.4
+        });
       }
     }
   ]
 });
 
-
-// update the LocomotiveScroll after entering a page
-barba.hooks.after(() => {
-  scroller.update();
+barba.hooks.beforeEnter(() => {
+  Scrollbar.destroy(smoothScroll);
+  window.scrollTo(0,0);
 });
+
+barba.hooks.after(() => {
+  Scrollbar.init(smoothScroll, scrollOptions); 
+});
+
+
+/* Menu btn */
+const navBtn = document.querySelector(".nav-btn");
+
+navBtn.addEventListener("click", function(){
+  this.classList.toggle("open");
+});
+
+
 
 
 
