@@ -1,11 +1,20 @@
 /* Smooth Scrollbar js */
-let Scrollbar      = window.Scrollbar;
-const smoothScroll = document.querySelector('#scroll');
-
+let Scrollbar       = window.Scrollbar;
+const smoothScroll  = document.querySelector('#scroll');
 const scrollOptions = {
   'damping': 0.08
+};
+
+
+function setScrollbar(){
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    Scrollbar.init(smoothScroll, scrollOptions); 
+  } else{
+    Scrollbar.destroy(smoothScroll);
+  } 
 }
-Scrollbar.init(smoothScroll, scrollOptions); 
+setScrollbar();
+
 
 /* Barba js for page transitions */
 barba.init({
@@ -65,9 +74,14 @@ barba.hooks.beforeEnter(() => {
 });
 
 barba.hooks.after(() => {
-  Scrollbar.init(smoothScroll, scrollOptions); 
+  setScrollbar();
 });
 
+
+
+window.addEventListener("resize", function(){
+  setScrollbar();
+});
 
 /* Menu btn */
 const navBtn = document.querySelector(".nav-btn");

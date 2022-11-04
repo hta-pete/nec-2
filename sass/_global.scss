@@ -2,7 +2,10 @@ body{
 	font-weight:400;
 	color:$primary;
 	background:white;
-	overflow:hidden;
+	overflow:auto;
+	@media(min-width:1024px){
+		overflow:hidden;
+	}
 }
 main{
 	position:absolute;

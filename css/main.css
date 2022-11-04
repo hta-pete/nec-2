@@ -822,7 +822,12 @@ body {
   font-weight: 400;
   color: #2b2b2b;
   background: white;
-  overflow: hidden;
+  overflow: auto;
+}
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 main {
