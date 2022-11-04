@@ -1,20 +1,7 @@
-/* Smooth Scrollbar js */
-let Scrollbar       = window.Scrollbar;
-const smoothScroll  = document.querySelector('#scroll');
-const scrollOptions = {
-  'damping': 0.08
-};
-
-
-function setScrollbar(){
-  if (window.matchMedia("(min-width: 1024px)").matches) {
-    Scrollbar.init(smoothScroll, scrollOptions); 
-  } else{
-    Scrollbar.destroy(smoothScroll);
-  } 
-}
-setScrollbar();
-
+const scroller = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
+});
 
 /* Barba js for page transitions */
 barba.init({
@@ -68,34 +55,21 @@ barba.init({
   ]
 });
 
+barba.hooks.before(() => {
+  document.querySelector("main").style.position = "absolute";
+});
 barba.hooks.beforeEnter(() => {
-  Scrollbar.destroy(smoothScroll);
+  scroller.destroy();
   window.scrollTo(0,0);
 });
-
 barba.hooks.after(() => {
-  setScrollbar();
+  scroller.init();
 });
 
-
-
-window.addEventListener("resize", function(){
-  setScrollbar();
-});
 
 /* Menu btn */
-const navBtn = document.querySelector(".nav-btn");
+let navBtn = document.querySelector(".nav-btn");
 
 navBtn.addEventListener("click", function(){
   this.classList.toggle("open");
 });
-
-
-
-
-
-
-
-
-
-

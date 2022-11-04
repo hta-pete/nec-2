@@ -2,13 +2,9 @@ body{
 	font-weight:400;
 	color:$primary;
 	background:white;
-	overflow:auto;
-	@media(min-width:1024px){
-		overflow:hidden;
-	}
 }
 main{
-	position:absolute;
+	position:relative;
 	top:0;
 	left:0;
 	width:100%;
@@ -427,15 +423,6 @@ PAGE TRANSITIONS
 
 ——————————————————————— */
 
-
-#scroll{
-	height:100vh;
-}
-
-.scrollbar-track-y{
-	width:6px !important;
-	background:transparent !important;
-}
 
 
 
