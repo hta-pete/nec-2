@@ -9,11 +9,9 @@ main{
 	left:0;
 	width:100%;
 }
-
 section{
 	padding:160px 0;
 }
-
 /* ——————————————————————
 
 BUTTONS
@@ -30,7 +28,6 @@ BUTTONS
 }
 .btn{
 	height:40px;
-
 }
 .btn-apply{
 	height:44px;
@@ -41,7 +38,12 @@ BUTTONS
 	background:$orange;
 	color:white;
 	border-radius:0 15px 0 15px;
-
+	box-shadow:0 0 0 0 rgba(0,0,0,0);
+	@include transition(all 0.6s $easeOutExpo);
+	&:hover{
+		box-shadow:0 3px 6px 0 rgba(0,0,0,0.3);
+		background:darken($orange, 5%);
+	}
 }
 .btn-primary{
 	height:40px;
@@ -61,6 +63,9 @@ BUTTONS
 	&.orange{
 		background:$orange;
 	  color:white;
+	  &:hover{
+			background:darken($orange, 5%);
+		}
 	}
 	i{
 		color:$orange;
@@ -68,7 +73,6 @@ BUTTONS
 	}
 	&:hover{
 		box-shadow:0 3px 6px 0 rgba(0,0,0,0.3);
-
 	}
 }
 
@@ -150,6 +154,114 @@ header{
 	}
 }
 
+#site-menu{
+	z-index:6;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:scroll;
+	background:white;
+	@include transform(translateY(100%));
+	@include transition(transform 0.4s $easeOutExpo);
+	will-change:transform;
+	.site-menu_inner{
+		z-index:1;
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		min-height:480px;
+		padding:60px 30px;
+		color:$primary;
+	}
+	.site-menu_inner-top{
+		margin-top:80px;
+		gap:100px;
+		span{
+			display:block;
+			font-size:12px;
+			text-transform:uppercase;
+		}
+		li{
+			display:block;
+			font-size:40px;
+			font-size: clamp(50px, 8vh, 70px);
+			line-height:1;
+			letter-spacing:-0.05em;
+			padding:0.3em 0;
+			border-bottom:1px solid $border_light;
+			@include opacity(0);
+			@for $i from 1 through 10 {
+		    &:nth-child(#{$i}) {
+		    	@include transform(translateY(60px * $i));
+		    	@include transition(transform 1.2s (0.05s * $i) $easeOutExpo, opacity 1.2s (0.05s * $i) $easeOutExpo);
+		    }
+		  }
+		  a{
+				color:$primary;
+				@include transition(color 0.4s $easeOutExpo);
+				&:hover{
+					color:$orange;
+				}
+			}
+			i{
+				position:absolute;
+				top:50%;
+				left:-1.5em;
+				@include transform(translateY(-50%));
+				font-size:0.32em;
+				color:$orange;
+			}
+		  &:last-child{
+		  	display:flex;
+		  	align-items:center;
+		  	height:36px;
+		  	font-size:15px;
+				line-height:1;
+				letter-spacing:0;
+				margin-top:50px;
+				border-bottom:none;
+		  }
+		  &.site-menu_social{
+		  	gap:15px;
+		  	a{
+					width:36px;
+					height:36px;
+					border-radius:100%;
+					border:1px solid $border_light;
+					font-size:15px;
+					@include transition(all 0.6s $easeOutExpo);
+					&:hover{
+						border-color:$orange;
+						i{
+							color:$orange;
+						}
+					}
+				}
+		  	i{
+					position:relative;
+					top:0;
+					left:0;
+					@include transform(translateY(0));
+					font-size:15px;
+					color:$primary;
+					@include transition(color 0.6s $easeOutExpo);
+				}
+		  }
+		}
+	}
+	&.open{
+		@include transform(translateY(0));
+		.site-menu_inner li, .site-menu_inner-bottom{
+			@include opacity(1);
+		  @include transform(translateY(0));
+		}
+	}
+}
+
 /* ——————————————————————
 
 HERO
@@ -207,7 +319,7 @@ HERO
 			background:rgba(40,40,40,0.6); 
 			@include transition(all 0.6s $easeOutExpo);
 			&:hover{
-				width:55%;
+				width:60%;
 				background:rgba(40,40,40,0.85);
 				i{
 					&.fa-chevron-left{
@@ -361,29 +473,25 @@ FOOTER
 
 ——————————————————————— */
 footer{
-	padding:90px 0 45px 0;
-	.footer_top{
-		padding-bottom:20px;
-		border-bottom:0.5px solid $border_light;
-	}
+	padding:50px 0;
 	.footer_menu{
-		padding:20px 0;
+		padding-bottom:25px;
 		a{
-			font-size:18px;
+			font-size:17px;
 			font-weight:600;
 			color:$primary;
-			margin-right:60px;
+			margin-right:50px;
 		}
 		.footer_social{
 			a{
 				display:flex;
 				align-items:center;
 				justify-content: center;
-				width:40px;
-				height:40px;
+				width:36px;
+				height:36px;
 				border-radius:100%;
 				border:1px solid $border_light;
-				font-size:17px;
+				font-size:15px;
 				margin:0 0 0 10px;
 			}
 		}

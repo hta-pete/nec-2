@@ -16,15 +16,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="css/locomotive-scroll.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
+  <script src="https://kit.fontawesome.com/07423e1cf4.js" crossorigin="anonymous"></script>
   
 </head>
 
 <body data-barba="wrapper">
-
+<!-- –––––––––––––––––
+HEADER
+–––––––––––––––––– -->
 <header class="flex--v flex--b">		
 	<div class="header_main-left flex--v">
 		<a href="./" class="fade"><img src="img/nec-logo.svg" height="50"></a>
@@ -37,11 +39,42 @@
 		</div>
 	</div>
 </header> 
+<!-- –––––––––––––––––
+SITE MENU
+–––––––––––––––––– -->
+<div id="site-menu">
+	<div class="site-menu_inner flex--all">
+		<div class="site-menu_inner-top flex--b">
+			<nav>
+				<span>Menu</span>
+				<ul>
+					<li><a href="shippers.html"><i class="fas fa-chevron-right"></i> <strong>Shippers</strong></a></li>
+					<li><a href="drivers.html"><i class="fas fa-chevron-right"></i> <strong>Drivers</strong></a></li>
+					<li><a href="shippers.html"><i class="fas fa-chevron-right"></i> <strong>About Us</strong></a></li>
+					<li><a href="">Privacy Policy</a></li>
+				</ul>
+			</nav>
+			<nav>
+				<span>Quick Links</span>
+				<ul>
+					<li><a href="shippers.html"><i class="icon-location"></i> <strong>Track a Load</strong></a></li>
+					<li><a href="drivers.html"><i class="icon-bubble2"></i> <strong>Contact Us</strong></a></li>
+					<li><a href="shippers.html"><i class="fa-solid fa-pen"></i> <strong>Apply Now</strong></a></li>
+					<li class="flex--right site-menu_social">
+						<a href="" class="flex--all"><i class="fab fa-facebook-f"></i></a>
+					  <a href="" class="flex--all"><i class="fab fa-linkedin-in"></i></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
 
 <div data-scroll-container>
-
 	<main data-barba="container" data-barba-namespace="home">
-
+    <!-- –––––––––––––––––
+    HERO
+    –––––––––––––––––– -->
 		<div id="hero" class="hero">
 			<div class="hero_sections flex">
 				<div class="col--2">
@@ -69,6 +102,9 @@
 				<source src="video/video-bg.mp4" type="video/mp4">
 			</video>	
 		</div>
+		<!-- –––––––––––––––––
+    COMPANY
+    –––––––––––––––––– -->
 		<section class="company-overview">
 			<div class="company-overview_intro">
 				<div class="container--xs flex--b flex--v">
@@ -102,6 +138,9 @@
 				</div>
 			</div>
 		</section>
+		<!-- –––––––––––––––––
+    DRIVERS
+    –––––––––––––––––– -->
 		<section class="driver-overview">
 			<div class="container--xs">
 				<div class="driver-overview_text align--center">
@@ -119,29 +158,18 @@
 				</div>
 			</div>
 		</section>
-
+    <!-- –––––––––––––––––
+    FOOTER
+    –––––––––––––––––– -->
 		<footer>
-			<div class="footer_top">
-				<div class="container--sm flex--b flex--v">
-					<div class="footer_top-left">
-						<div class="btn-group flex--v">
-							<a href="" class="btn-primary"><i class="icon-location"></i>Track a load</a>
-					    <a href="" class="btn-primary"><i class="icon-bubble2"></i> Contact us</a>
-						</div>
-					</div>
-					<div class="footer_top-right">
-						<div class="flex--v">
-							<a href="" class="btn-primary orange">Driver Application</a>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="footer_menu">
 				<div class="container--sm flex--b">
 					<div class="footer_menu-left flex--v">
-						<a href="shippers.html" class="no-barba">Shippers</a>
-						<a href="drivers.html" class="no-barba">Drivers</a>
-						<a href="">Company</a>
+						<a href="shippers.html">Shippers</a>
+						<a href="drivers.html">Drivers</a>
+						<a href="">About Us</a>
+						<a href="">Track a load</a>
+					  <a href="">Contact us</a>
 					</div>
 					<div class="footer_menu-right">
 						<div class="footer_social flex--v">
@@ -183,17 +211,15 @@
 				</div>
 			</div>
 		</footer>
-
 	</main>
-
 </div><!-- end scroll container-->
-
-
-<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-<script src="js/libs/vendor.js"></script>
+<!-- –––––––––––––––––
+JS
+–––––––––––––––––– -->
+<script src="js/libs/locomotive-scroll.min.js"></script>
+<script src="js/libs/barba.min.js"></script>
+<script src="js/libs/gsap.min.js"></script>
 <script src="js/app.js"></script>
-
 	
 </body>
 </html>

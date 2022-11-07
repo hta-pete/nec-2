@@ -56,11 +56,11 @@ body{
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3wk4jn');
-  src:  url('fonts/icomoon.eot?3wk4jn#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3wk4jn') format('truetype'),
-    url('fonts/icomoon.woff?3wk4jn') format('woff'),
-    url('fonts/icomoon.svg?3wk4jn#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?myzdwf');
+  src:  url('fonts/icomoon.eot?myzdwf#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?myzdwf') format('truetype'),
+    url('fonts/icomoon.woff?myzdwf') format('woff'),
+    url('fonts/icomoon.svg?myzdwf#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -99,6 +99,15 @@ body{
 .icon-play3:before {
   content: "\ea1c";
 }
+.icon-arrow-up-right2:before {
+  content: "\ea3b";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
 .icon-facebook:before {
   content: "\ea90";
 }
@@ -111,7 +120,6 @@ body{
 .icon-linkedin2:before {
   content: "\eaca";
 }
-
 
 
 p, ul{
@@ -144,30 +152,31 @@ strong{
 a{
   text-decoration:none;
 }
+/* –––––––––––––––––––––––––
 
+Font styles
+
+––––––––––––––––––––––––– */
 .font-size--100{
   font-size: 100px;
   line-height:1;
   letter-spacing:-5px;
-  //text-transform:uppercase;
 }
 .font-size--80{
   font-size: 80px;
   line-height:1;
   letter-spacing:-5px;
-  //text-transform:uppercase;
 }
 .font-size--70{
   font-size: 70px;
   line-height:1;
   letter-spacing:-4px;
-  //text-transform:uppercase;
 }
 
 .font-size--50{
-  font-size: calc(32px + (52 - 32) * ((100vw - 300px) / (2200 - 300)));
-  line-height:1.2;
-  letter-spacing:calc(-1.5px + ((-2) - (-1.5)) * ((100vw - 300px) / (1920 - 300)));
+  font-size: 50px;
+  line-height:1;
+  letter-spacing:-3px;
 }
 
 
@@ -175,8 +184,6 @@ a{
   font-size: 17px;
   line-height:1.2;
 }
-
-
 
 .font-uppercase{
   text-transform: uppercase;

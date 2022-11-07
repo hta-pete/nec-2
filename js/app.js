@@ -1,4 +1,4 @@
-const scroller = new LocomotiveScroll({
+const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true
 });
@@ -56,20 +56,41 @@ barba.init({
 });
 
 barba.hooks.before(() => {
-  document.querySelector("main").style.position = "absolute";
+  const main = document.querySelector("main");
+  main.style.position = "absolute";
+  scroll.destroy();
 });
-barba.hooks.beforeEnter(() => {
-  scroller.destroy();
-  window.scrollTo(0,0);
+barba.hooks.beforeLeave(() => {
+  scroll.init();
 });
-barba.hooks.after(() => {
-  scroller.init();
+barba.hooks.afterEnter(() => {
+  scroll.update();
 });
-
 
 /* Menu btn */
-let navBtn = document.querySelector(".nav-btn");
+const navBtn        = document.querySelector(".nav-btn");
+const siteMenu      = document.querySelector("#site-menu");
+const siteMenuLinks = siteMenu.querySelectorAll("a");
 
-navBtn.addEventListener("click", function(){
-  this.classList.toggle("open");
+navBtn.addEventListener("click", (e) => { 
+  e.currentTarget.classList.toggle("open");
+  siteMenu.classList.toggle("open");
 });
+
+siteMenuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navBtn.classList.remove("open");
+    siteMenu.classList.remove("open");
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
