@@ -1,6 +1,35 @@
+const $window = window;
+const $main   = document.querySelector("#scroll-content");
+const $header = document.querySelector("header");
+
+let mainScrollTop;
+
 const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
-  smooth: true
+  smooth: true,
+  getDirection: true,
+  smartphone: {
+    smooth: false,
+  },
+  tablet: {
+    smooth: false,
+  }
+});
+
+function scrollStuff(){
+  mainScrollTop   = $main.getBoundingClientRect().top + window.scrollY;
+  let windowScrollTop = $window.scrollY;
+
+  if( mainScrollTop < -90 || windowScrollTop > 90 ){
+    $header.classList.add('active');
+  } else{
+    $header.classList.remove('active');
+  }
+}
+scroll.on('scroll', scrollStuff);
+
+$window.addEventListener('load', function(){
+  window.dispatchEvent(new Event('resize'));
 });
 
 /* Barba js for page transitions */
@@ -65,6 +94,8 @@ barba.hooks.beforeLeave(() => {
 });
 barba.hooks.afterEnter(() => {
   scroll.update();
+  scroll.on('scroll', scrollStuff);
+  window.dispatchEvent(new Event('resize'));
 });
 
 /* Menu btn */
@@ -75,6 +106,9 @@ const siteMenuLinks = siteMenu.querySelectorAll("a");
 navBtn.addEventListener("click", (e) => { 
   e.currentTarget.classList.toggle("open");
   siteMenu.classList.toggle("open");
+  if( mainScrollTop > -90 ){
+    $header.classList.toggle('active');
+  } 
 });
 
 siteMenuLinks.forEach(link => {

@@ -169,6 +169,11 @@ a {
   text-decoration: none;
 }
 
+/* –––––––––––––––––––––––––
+
+Font styles
+
+––––––––––––––––––––––––– */
 .font-size--100 {
   font-size: 100px;
   line-height: 1;
@@ -933,15 +938,24 @@ header {
   width: 100%;
   height: 80px;
   padding: 0 0 0 30px;
-  background: white;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  background: transparent;
+  -webkit-transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  -ms-transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-header .logo-header svg {
-  height: 22px;
-  width: auto;
+header.down {
+  transform: translate3d(0, -90px, 0);
+}
+header.active {
+  background: #2b2b2b;
+}
+header.active .phone-header a {
+  color: #2b2b2b;
 }
 header a {
-  color: #2b2b2b;
+  color: white;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -1276,7 +1290,7 @@ HERO
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
   min-height: 400px;
   background: #2b2b2b;
   color: white;
@@ -1333,7 +1347,7 @@ HERO
 }
 .hero .hero_sections .col--2:hover {
   width: 60%;
-  background: rgba(40, 40, 40, 0.85);
+  background: rgba(40, 40, 40, 0.4);
 }
 .hero .hero_sections .col--2:hover i.fa-chevron-left {
   left: -50px;
@@ -1380,6 +1394,10 @@ HERO
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.hero video.video-faded {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 .hero .img--max {
   z-index: 0;

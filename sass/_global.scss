@@ -81,6 +81,10 @@ BUTTONS
 HEADER
 
 ——————————————————————— */
+html[data-direction="down"] header {
+  //transform: translate3d(0,-90px,0);
+}
+
 header{
 	z-index:8;
 	position:fixed;
@@ -89,16 +93,21 @@ header{
 	width:100%;
 	height:80px;
 	padding:0 0 0 30px;
-	background:white;
-	box-shadow:0 0 8px 0 rgba(0,0,0,0.25);
-	.logo-header{
-		svg{
-			height:22px;
-			width:auto;
+	background:transparent;
+	@include transition(background 0.4s $easeOutExpo);
+	&.down{
+		transform: translate3d(0,-90px,0);
+	}
+	&.active{
+		background:$primary;
+		.phone-header{
+			a{
+				color:$primary;
+			}
 		}
 	}
 	a{
-		color:$primary;
+		color:white;
 		font-size:15px;
 		font-weight:600;
 		letter-spacing:-0.025em;
@@ -164,7 +173,7 @@ header{
 	overflow:scroll;
 	background:white;
 	@include transform(translateY(100%));
-	@include transition(transform 0.4s $easeOutExpo);
+	@include transition(transform 0.4s  $easeOutExpo);
 	will-change:transform;
 	.site-menu_inner{
 		z-index:1;
@@ -270,7 +279,7 @@ HERO
 .hero{
 	position:relative;
 	width:100%;
-	height:calc(100vh - 60px);
+	height:100vh;
 	min-height:400px;
 	background:$primary;
 	color:white;
@@ -320,7 +329,7 @@ HERO
 			@include transition(all 0.6s $easeOutExpo);
 			&:hover{
 				width:60%;
-				background:rgba(40,40,40,0.85);
+				background:rgba(40,40,40,0.4);
 				i{
 					&.fa-chevron-left{
 						left:-50px;
@@ -367,6 +376,9 @@ HERO
 		width:100%;
 		height:100%;
 		object-fit: cover;
+		&.video-faded{
+			@include opacity(0.5);
+		}
 	}
 	.img--max{
 		z-index:0;
