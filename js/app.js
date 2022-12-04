@@ -1,6 +1,5 @@
-const $window = window;
-const $main   = document.querySelector("#scroll-content");
-const $header = document.querySelector("header");
+const $window      = window;
+const $main        = document.querySelector("#scroll-content");
 
 let mainScrollTop;
 
@@ -17,13 +16,17 @@ const scroll = new LocomotiveScroll({
 });
 
 function scrollStuff(){
-  mainScrollTop   = $main.getBoundingClientRect().top + window.scrollY;
+  const $header       = document.querySelector("header");
+  const $mouseScroll  = document.querySelector(".mouse-scroll");
+  mainScrollTop       = $main.getBoundingClientRect().top + window.scrollY;
   let windowScrollTop = $window.scrollY;
 
   if( mainScrollTop < -90 || windowScrollTop > 90 ){
     $header.classList.add('active');
+    $mouseScroll.classList.add('hide');
   } else{
     $header.classList.remove('active');
+    $mouseScroll.classList.remove('hide');
   }
 }
 scroll.on('scroll', scrollStuff);
