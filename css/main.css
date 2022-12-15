@@ -959,7 +959,7 @@ header a {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.025em;
-  margin-right: 30px;
+  margin-right: 25px;
 }
 header .btn-apply {
   margin-right: 15px;
@@ -967,9 +967,10 @@ header .btn-apply {
 header .nav-btn {
   position: relative;
   z-index: 1020;
-  width: 80px;
-  height: 80px;
-  border-radius: 0 0 0 15px;
+  width: 44px;
+  height: 44px;
+  margin-right: 16px;
+  border-radius: 0 15px 0 15px;
   cursor: pointer;
   -webkit-transition: background-color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   -moz-transition: background-color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -982,12 +983,12 @@ header .nav-btn:hover {
 }
 header .nav-btn .nav-btn_inner {
   position: relative;
-  width: 24px;
+  width: 22px;
   height: 16px;
 }
 header .nav-btn span {
   height: 2px;
-  width: 24px;
+  width: 22px;
   background: white;
   position: absolute;
   z-index: 4;
@@ -1037,15 +1038,15 @@ header .nav-btn.open span:nth-child(3) {
   position: fixed;
   top: 0;
   right: 0;
-  width: 280px;
+  width: 260px;
   background: #2b2b2b;
   border-radius: 0 0 0 30px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-  -moz-transform: translateX(290px);
-  -o-transform: translateX(290px);
-  -ms-transform: translateX(290px);
-  -webkit-transform: translateX(290px);
-  transform: translateX(290px);
+  -moz-transform: translateX(260px);
+  -o-transform: translateX(260px);
+  -ms-transform: translateX(260px);
+  -webkit-transform: translateX(260px);
+  transform: translateX(260px);
   -webkit-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   -moz-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   -ms-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
