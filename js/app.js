@@ -109,9 +109,6 @@ const siteMenuLinks = siteMenu.querySelectorAll("a");
 navBtn.addEventListener("click", (e) => { 
   e.currentTarget.classList.toggle("open");
   siteMenu.classList.toggle("open");
-  if( mainScrollTop > -90 ){
-    $header.classList.toggle('active');
-  } 
 });
 
 siteMenuLinks.forEach(link => {
