@@ -1,0 +1,74 @@
+/* ——————————————————————
+
+Drivers
+
+——————————————————————— */
+.driver__info{
+  padding:0;
+  .col{
+    max-height:750px;
+  }
+}
+.driver__info-intro{
+  padding:90px 30px;
+  max-width:480px;
+}
+.driver__info-intro__mini-gallery{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:15px;
+  img{
+    display:block;
+    width:100%;
+    height:auto;
+    &:first-child{
+      border-radius:0 0 0 20px;
+    }
+    &:last-child{
+      border-radius:0 20px 0 0;
+    }
+  }
+}
+.driver__info-benefits{
+  padding:90px 0 120px 0;
+  li{
+    position:relative;
+    display:block;
+    margin-bottom:20px;
+    font-size:15px;
+    line-height:1.35;
+    margin-left:20px;
+    &:before{
+      content:"";
+      position:absolute;
+      display:block;
+      top:8px;
+      left:-20px;
+      width:10px;
+      height:3px;
+      background:$orange;
+      margin-bottom:5px;
+    }
+  }
+	
+}
+
+
+
+.apply__cta{
+  padding:0 0 0 12vw;
+  color:white;
+}
+.apply__cta-inner{
+  padding:120px 0 120px 8vw;
+  background-color:$orange;
+  background-image:url('../img/apply-cta-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size:auto 100%;
+  p{
+    color:inherit;
+    max-width:400px;
+    margin-inline: auto;
+  }
+}

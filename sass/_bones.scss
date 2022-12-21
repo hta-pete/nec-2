@@ -51,7 +51,6 @@ TYPE
 ––––––––––––––––––––––––––––––––––––––––––– */
 body{ 
   font-family:"Merriweather Sans";
-  font-size:17px;
 }
 
 @font-face {
@@ -123,7 +122,6 @@ body{
 
 
 p, ul{
-  font-size:17px;
   line-height:1.8;
   font-weight:400;
   color:$secondary;
@@ -172,7 +170,11 @@ Font styles
   line-height:1;
   letter-spacing:-4px;
 }
-
+.font-size--60{
+  font-size: 60px;
+  line-height:1;
+  letter-spacing:-3px;
+}
 .font-size--50{
   font-size: 50px;
   line-height:1;
@@ -246,6 +248,13 @@ UTILITY
   box-sizing: border-box;
 }
 
+.grid{
+  display:grid;
+  gap:50px;
+  &--3{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 .flex{
   display:flex;
@@ -444,6 +453,20 @@ GRID
 }
 
 
+.br--bottom-left{
+  border-radius:0 0 0 60px;
+  overflow:hidden;
+}
+
+
+
+.img--fit{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
 
 
 

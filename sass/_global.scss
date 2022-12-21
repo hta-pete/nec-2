@@ -8,6 +8,7 @@ main{
 	top:0;
 	left:0;
 	width:100%;
+	min-width:1280px;
 }
 section{
 	padding:160px 0;
@@ -67,6 +68,10 @@ BUTTONS
 			background:darken($orange, 5%);
 		}
 	}
+	&.orange-text{
+		color:$orange;
+		font-size:16px;
+	}
 	i{
 		color:$orange;
 		margin-right:2px;
@@ -87,6 +92,7 @@ header{
 	top:0;
 	left:0;
 	width:100%;
+	min-width:1280px;
 	height:80px;
 	padding:0 0 0 30px;
 	background:transparent;
@@ -297,7 +303,7 @@ HERO
 	}
 	.hero_sections--text{
 		position:absolute;
-		bottom:12.5%;
+		bottom:15%;
 		h2{
 			display:inline-block;
 			position:relative;
@@ -474,7 +480,7 @@ COMPANY OVERVIEW
 ——————————————————————— */
 .company-overview_intro{
 	p{
-		max-width:500px;
+		max-width:480px;
 	}
 	
 }
@@ -521,7 +527,7 @@ FOOTER
 
 ——————————————————————— */
 footer{
-	padding:50px 0;
+	padding:25px 0 50px 0;
 	.footer_menu{
 		padding-bottom:25px;
 		a{
