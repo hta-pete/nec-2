@@ -1,0 +1,120 @@
+.contact__info{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-inline:auto;
+  padding:0 0 120px 0;
+}
+.contact__col{
+  position:relative;
+  &:first-child{
+    padding:140px 60px 90px 60px;
+  }
+  &:last-child{
+    overflow:hidden;
+    border-radius:0 0 0 60px;
+  }
+  img{
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+}
+.width--600{
+  max-width:520px;
+  margin-inline:auto;
+}
+
+.form__contact{
+  margin-top:15px;
+  .form_grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:0 15px;
+  }
+  .form-group {
+    position: relative;
+    margin-top:24px;
+  }
+  .actions{
+    margin-top:40px;
+    text-align:right;
+  }
+  .form-group input {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    height:24px;
+    padding-bottom:3px;
+    color: $primary;
+    background:transparent;
+    border: none;
+    border-bottom: 1px solid $border_light;
+  }
+  .form-group textarea {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    height:24px;
+    resize:none;
+    padding-bottom:3px;
+    color: $primary;
+    background:transparent;
+    border: none;
+    border-bottom: 1px solid $border_light;
+  }
+
+  .form-group label {
+    display:block;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    height:24px;
+    line-height:24px;
+    font-size: 14px;
+    color: $secondary;
+    pointer-events: none;
+    transform: translateY(0);
+    transition: all 0.4s $easeOutExpo;
+  }
+
+  .form-group input:valid,
+  .form-group input:focus,
+  .form-group textarea:valid,
+  .form-group textarea:focus {
+      border-bottom-color: $orange;
+      outline: none;
+  }
+
+  .form-group input:valid + label,
+  .form-group input:focus + label,
+  .form-group textarea:valid + label,
+  .form-group textarea:focus + label {
+      color: $orange;
+      font-size: 11px;
+      transform: translateY(-18px);
+  }
+}
+
+
+
+
+.contact__map{
+  padding:120px 20px;
+  background:$primary url('../img/chicago-map.jpg') no-repeat left center;
+  background-size:auto 100%;
+  font-size:15px;
+  h4{
+    font-weight:700;
+    text-transform:uppercase;
+    color:white;
+    margin-bottom:10px;
+  }
+  a{
+    color:white;
+    line-height:1.5;
+  }
+}

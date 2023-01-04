@@ -62,31 +62,75 @@ SITE MENU
 </div>
 
 <div id="scroll-content" data-scroll-container>
-	<main data-barba="container" data-barba-namespace="shippers">
-		<div class="hero">
-			<div class="hero_sections flex--h">
-				<div class="hero_sections--text">
-					<div class="align--center">
-						<h2 class="font-size--90 mt--quarter"><strong>Ship with Us.</strong></h2> 
+	<main data-barba="container" data-barba-namespace="contact">
+		<!-- —————————————————
+			contact section
+		—————————————————— -->
+		<section class="contact__info">	
+			
+        <div class="contact__col flex--all">
+					<div class="width--600">
+            <h2 class="font-size--50"><strong>Let's Get in Touch.</strong></h2>
+						<p class="mt--20">We’d love to hear from you. Feel free to use the contact form below, give us a call, send us an email 
+							or stop by to see us in person.</p>
+						<div class="form__contact">
+							<form action="">
+								<div class="form_grid">
+									<div class="form-group">
+										<input type="text" id="contact-name" name="name" required>
+										<label for="contact-name">Name</label>
+									</div> 
+									<div class="form-group">
+										<input type="text" id="contact-email" name="email" required>
+										<label for="contact-email">Email</label>
+									</div> 
+									<div class="form-group">
+										<input type="text" id="contact-phone" name="phone" required>
+										<label for="contact-phone">Phone</label>
+									</div> 
+									<div class="form-group">
+										<input type="text" id="contact-subject" name="subject" required>
+										<label for="contact-subject">Subject</label>
+									</div> 
+								</div>
+								<div class="form-group">
+									<textarea name="message" id="contact-message" required></textarea>
+									<label for="contact-message">Message</label>
+								</div> 
+								<div class="form-group actions">
+									<button type="submit" class="btn-primary orange">Contact Us</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
+				<div class="contact__col">
+					<img src="img/contact-1.jpg">	
+				</div>	
+		</section>
+
+		<section class="contact__map">
+			<div class="container--sm flex--b">
+				<div class="col--4">
+					<h4>Chicago</h4>
+					<a href="" class="a-underline">1130 Chicago Tube Dr<br>Romeoville, IL 60446</a>
+				</div>
+				<div class="col--4">
+					<h4>Phone</h4>
+					<a href="">(630) 755-4661</a>
+				</div>
+				<div class="col--4">
+					<h4>Fax</h4>
+					<a href="">(630) 689-9029</a>
+				</div>
+				<div class="col--4">
+					<h4>Email</h4>
+					<a href="" class="a-underline">info@nationalexp.com</a>
+				</div>
 			</div>
-			<video loop muted playsinline autoplay class="video-faded">
-				<source src="video/shippers-hero-bg.mp4" type="video/mp4">
-			</video>
-			<div class="mouse-scroll">
-			  <svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" id="mouse-scroll-arrows">
-					<g id="top-arrow">
-					 <rect transform="rotate(45 24 35.25)" id="svg_7" height="3" width="18" y="30" x="16" fill="#f39522"/>
-					 <rect transform="rotate(135 37.5 35.25)" id="svg_8" height="3" width="18" y="34" x="26" fill="#f39522"/>
-					</g>
-					<g id="bottom-arrow">
-						<rect transform="rotate(45 24 35.25)" id="svg_7" height="3" width="18" y="30" x="16" fill="#f39522"/>
-						<rect transform="rotate(135 37.5 35.25)" id="svg_8" height="3" width="18" y="34" x="26" fill="#f39522"/>
-					</g>
-				</svg>
-			</div>		
-		</div>
+		</section>
+
+
 		<!-- –––––––––––––––––
     FOOTER
     –––––––––––––––––– -->
@@ -97,7 +141,7 @@ SITE MENU
 						<a href="shippers.html">Shippers</a>
 						<a href="drivers.html">Drivers</a>
 						<a href="">About Us</a>
-						<a href="">Track a load</a>
+						<a href="">Load Tracking</a>
 					  <a href="">Contact us</a>
 					</div>
 					<div class="footer_menu-right">
@@ -108,26 +152,6 @@ SITE MENU
 					</div>
 				</div>
 			</div>
-	    <div class="footer_map">
-	    	<div class="container--sm flex--b">
-	    		<div class="col--4">
-	    			<h4>Chicago</h4>
-	    			<a href="" class="a-underline">1130 Chicago Tube Dr<br>Romeoville, IL 60446</a>
-	    		</div>
-	    		<div class="col--4">
-	    			<h4>Phone</h4>
-	    			<a href="">(630) 755-4661</a>
-	    		</div>
-	    		<div class="col--4">
-	    			<h4>Fax</h4>
-	    			<a href="">(630) 689-9029</a>
-	    		</div>
-	    		<div class="col--4">
-	    			<h4>Email</h4>
-	    			<a href="" class="a-underline">info@nationalexp.com</a>
-	    		</div>
-	    	</div>
-	    </div>
 			<div class="footer_bottom">
 				<div class="container--sm flex--b flex--v">
 					<div class="footer_bottom-left">

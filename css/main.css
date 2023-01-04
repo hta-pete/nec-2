@@ -1605,4 +1605,121 @@ Drivers
   margin-inline: auto;
 }
 
+.contact__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: auto;
+  padding: 0 0 120px 0;
+}
+
+.contact__col {
+  position: relative;
+}
+.contact__col:first-child {
+  padding: 140px 60px 90px 60px;
+}
+.contact__col:last-child {
+  overflow: hidden;
+  border-radius: 0 0 0 60px;
+}
+.contact__col img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.width--600 {
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.form__contact {
+  margin-top: 15px;
+}
+.form__contact .form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 15px;
+}
+.form__contact .form-group {
+  position: relative;
+  margin-top: 24px;
+}
+.form__contact .actions {
+  margin-top: 40px;
+  text-align: right;
+}
+.form__contact .form-group input {
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  height: 24px;
+  padding-bottom: 3px;
+  color: #2b2b2b;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+}
+.form__contact .form-group textarea {
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  height: 24px;
+  resize: none;
+  padding-bottom: 3px;
+  color: #2b2b2b;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+}
+.form__contact .form-group label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #8a8a8a;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.form__contact .form-group input:valid,
+.form__contact .form-group input:focus,
+.form__contact .form-group textarea:valid,
+.form__contact .form-group textarea:focus {
+  border-bottom-color: #f39522;
+  outline: none;
+}
+.form__contact .form-group input:valid + label,
+.form__contact .form-group input:focus + label,
+.form__contact .form-group textarea:valid + label,
+.form__contact .form-group textarea:focus + label {
+  color: #f39522;
+  font-size: 11px;
+  transform: translateY(-18px);
+}
+
+.contact__map {
+  padding: 120px 20px;
+  background: #2b2b2b url("../img/chicago-map.jpg") no-repeat left center;
+  background-size: auto 100%;
+  font-size: 15px;
+}
+.contact__map h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 10px;
+}
+.contact__map a {
+  color: white;
+  line-height: 1.5;
+}
+
 /*# sourceMappingURL=main.css.map */
