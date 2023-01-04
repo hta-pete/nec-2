@@ -7,7 +7,7 @@
 .contact__col{
   position:relative;
   &:first-child{
-    padding:140px 60px 90px 60px;
+    padding:160px 60px 60px 60px;
   }
   &:last-child{
     overflow:hidden;
@@ -28,7 +28,7 @@
   margin-inline:auto;
 }
 
-.form__contact{
+.form__contact, .form__tracking{
   margin-top:15px;
   .form_grid{
     display:grid;
@@ -41,14 +41,17 @@
   }
   .actions{
     margin-top:40px;
-    text-align:right;
+    text-align:center;
+    &--right{
+      text-align:right;
+    }
   }
   .form-group input {
     display: block;
     font-size: 14px;
     width: 100%;
     height:24px;
-    padding-bottom:3px;
+    padding-bottom:5px;
     color: $primary;
     background:transparent;
     border: none;
@@ -70,7 +73,7 @@
   .form-group label {
     display:block;
     position: absolute;
-    top: 0;
+    top: -4px;
     left: 2px;
     height:24px;
     line-height:24px;
@@ -118,3 +121,4 @@
     line-height:1.5;
   }
 }
+

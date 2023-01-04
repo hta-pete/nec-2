@@ -240,6 +240,26 @@ HERO
 	background:$primary;
 	color:white;
 	overflow:hidden;
+	&--dark{
+		height:580px;
+	  //min-height:300px;
+		video.video-faded{
+			opacity:0.25 !important;
+		}
+		*{
+			color:white;
+		}
+		form{
+			.form-group{
+				input{
+					color:white;
+				}
+				label{
+					color:white;
+				}
+			}
+		}
+	}
 	.back-btn-left{
 		z-index:4;
 		display:inline-block;
