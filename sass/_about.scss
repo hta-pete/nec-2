@@ -1,0 +1,53 @@
+/* ——————————————————————
+
+About Us
+
+——————————————————————— */
+.about__info{
+  padding:60px 0 0 0;
+  .col{
+    max-height:750px;
+  }
+}
+.about__info-intro{
+  display:grid;
+  grid-template-columns: 500px 1fr;
+  gap:50px;
+  padding:90px 30px;
+}
+.about__info-intro__mini-gallery{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:15px;
+  img{
+    display:block;
+    width:100%;
+    height:auto;
+    &:nth-child(2){
+      border-radius:0 40px 0 0;
+    }
+    &:nth-child(3){
+      border-radius:0 0 0 40px;
+    }
+  }
+}
+.about__bullets{
+  padding:60px 0 120px 0;
+  .about__bullets-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    .col{
+      padding:25px;
+      border-right:0.5px solid $border_light;
+      &:last-child{
+        border:none;
+      }
+      h3{
+        font-size:14px;
+        margin-top:0.5em;
+        color:$secondary;
+      }
+    }
+  }
+}
+

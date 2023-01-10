@@ -1184,6 +1184,9 @@ HERO
 .hero--dark form .form-group label {
   color: white;
 }
+.hero--sm {
+  height: 580px;
+}
 .hero .back-btn-left {
   z-index: 4;
   display: inline-block;
@@ -1640,7 +1643,7 @@ Drivers
 
 /* ——————————————————————
 
-Drivers
+Shippers
 
 ——————————————————————— */
 .shippers__info {
@@ -1669,29 +1672,6 @@ Drivers
 }
 .shippers__info-intro__mini-gallery img:last-child {
   border-radius: 0 20px 0 0;
-}
-
-.shippers__info-benefits {
-  padding: 90px 0 120px 0;
-}
-.shippers__info-benefits li {
-  position: relative;
-  display: block;
-  margin-bottom: 20px;
-  font-size: 15px;
-  line-height: 1.35;
-  margin-left: 20px;
-}
-.shippers__info-benefits li:before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 8px;
-  left: -20px;
-  width: 10px;
-  height: 3px;
-  background: #f39522;
-  margin-bottom: 5px;
 }
 
 .shippers__bullets {
@@ -1798,6 +1778,62 @@ Drivers
 .form__pod .form-group textarea:focus + label {
   font-size: 11px;
   transform: translateY(-18px);
+}
+
+/* ——————————————————————
+
+About Us
+
+——————————————————————— */
+.about__info {
+  padding: 60px 0 0 0;
+}
+.about__info .col {
+  max-height: 750px;
+}
+
+.about__info-intro {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 50px;
+  padding: 90px 30px;
+}
+
+.about__info-intro__mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.about__info-intro__mini-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.about__info-intro__mini-gallery img:nth-child(2) {
+  border-radius: 0 40px 0 0;
+}
+.about__info-intro__mini-gallery img:nth-child(3) {
+  border-radius: 0 0 0 40px;
+}
+
+.about__bullets {
+  padding: 60px 0 120px 0;
+}
+.about__bullets .about__bullets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.about__bullets .about__bullets-grid .col {
+  padding: 25px;
+  border-right: 0.5px solid #aaa;
+}
+.about__bullets .about__bullets-grid .col:last-child {
+  border: none;
+}
+.about__bullets .about__bullets-grid .col h3 {
+  font-size: 14px;
+  margin-top: 0.5em;
+  color: #8a8a8a;
 }
 
 .contact__info {

@@ -1,6 +1,6 @@
 /* ——————————————————————
 
-Drivers
+Shippers
 
 ——————————————————————— */
 .shippers__info{
@@ -11,7 +11,6 @@ Drivers
 }
 .shippers__info-intro{
   padding:90px 30px;
-  //max-width:480px;
 }
 .shippers__info-intro__mini-gallery{
   display:grid;
@@ -29,30 +28,6 @@ Drivers
     }
   }
 }
-.shippers__info-benefits{
-  padding:90px 0 120px 0;
-  li{
-    position:relative;
-    display:block;
-    margin-bottom:20px;
-    font-size:15px;
-    line-height:1.35;
-    margin-left:20px;
-    &:before{
-      content:"";
-      position:absolute;
-      display:block;
-      top:8px;
-      left:-20px;
-      width:10px;
-      height:3px;
-      background:$orange;
-      margin-bottom:5px;
-    }
-  }
-	
-}
-
 .shippers__bullets{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
