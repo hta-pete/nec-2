@@ -207,7 +207,7 @@ header{
 				a{
 					color:white;
 					@include transition(color 0.4s $easeOutExpo);
-					&:hover{
+					&:hover, &.active{
 						color:$orange;
 					}
 				}
@@ -559,6 +559,9 @@ footer{
 			font-weight:600;
 			color:$primary;
 			margin-right:50px;
+			&.active{
+				color:$orange;
+			}
 		}
 		.footer_social{
 			a{

@@ -1132,7 +1132,7 @@ header .nav-btn.open span:nth-child(3) {
   -o-transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-#site-menu .site-menu_inner nav li a:hover {
+#site-menu .site-menu_inner nav li a:hover, #site-menu .site-menu_inner nav li a.active {
   color: #f39522;
 }
 #site-menu .site-menu_inner nav li i {
@@ -1524,6 +1524,9 @@ footer .footer_menu a {
   color: #2b2b2b;
   margin-right: 50px;
 }
+footer .footer_menu a.active {
+  color: #f39522;
+}
 footer .footer_menu .footer_social a {
   display: flex;
   align-items: center;
@@ -1579,7 +1582,6 @@ Drivers
 }
 
 .driver__info-intro {
-  padding: 90px 30px;
   max-width: 480px;
 }
 
