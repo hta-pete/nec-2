@@ -1185,7 +1185,8 @@ HERO
   color: white;
 }
 .hero--sm {
-  height: 580px;
+  height: 60vh;
+  min-height: 350px;
 }
 .hero .back-btn-left {
   z-index: 4;
