@@ -175,31 +175,37 @@ Font styles
 .font-size--90 {
   font-size: 80px;
   line-height: 1;
-  letter-spacing: -5px;
+  letter-spacing: -0.035em;
 }
 
 .font-size--80 {
   font-size: 80px;
   line-height: 1;
-  letter-spacing: -5px;
+  letter-spacing: -0.035em;
 }
 
 .font-size--70 {
   font-size: 70px;
   line-height: 1;
-  letter-spacing: -4px;
+  letter-spacing: -0.035em;
 }
 
 .font-size--60 {
   font-size: 60px;
   line-height: 1;
-  letter-spacing: -3px;
+  letter-spacing: -0.035em;
 }
 
 .font-size--50 {
   font-size: 50px;
   line-height: 1;
-  letter-spacing: -3px;
+  letter-spacing: -0.035em;
+}
+
+.font-size--40 {
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.035em;
 }
 
 .font-size--small {
@@ -361,6 +367,11 @@ GRID
   width: 100%;
   max-width: 1780px;
   margin: 0 auto;
+}
+
+.max--600 {
+  max-width: 600px;
+  margin-inline: auto;
 }
 
 .row {
@@ -1625,6 +1636,164 @@ Drivers
   color: inherit;
   max-width: 400px;
   margin-inline: auto;
+}
+
+/* ——————————————————————
+
+Drivers
+
+——————————————————————— */
+.shippers__info {
+  padding: 60px 0 0 0;
+}
+.shippers__info .col {
+  max-height: 750px;
+}
+
+.shippers__info-intro {
+  padding: 90px 30px;
+}
+
+.shippers__info-intro__mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.shippers__info-intro__mini-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.shippers__info-intro__mini-gallery img:first-child {
+  border-radius: 0 0 0 20px;
+}
+.shippers__info-intro__mini-gallery img:last-child {
+  border-radius: 0 20px 0 0;
+}
+
+.shippers__info-benefits {
+  padding: 90px 0 120px 0;
+}
+.shippers__info-benefits li {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.35;
+  margin-left: 20px;
+}
+.shippers__info-benefits li:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 8px;
+  left: -20px;
+  width: 10px;
+  height: 3px;
+  background: #f39522;
+  margin-bottom: 5px;
+}
+
+.shippers__bullets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.shippers__bullets .col {
+  padding: 25px 0;
+  border-right: 0.5px solid #aaa;
+}
+.shippers__bullets .col:last-child {
+  border: none;
+}
+.shippers__bullets .col h3 {
+  font-size: 14px;
+  margin-top: 0.5em;
+  color: #8a8a8a;
+}
+
+.request__pod {
+  padding: 0 0 0 12vw;
+  color: white;
+}
+
+.request__pod-inner {
+  padding: 120px 0 120px 8vw;
+  background-color: #8a8a8a;
+}
+.request__pod-inner p {
+  color: inherit;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.form__pod {
+  margin-top: 15px;
+}
+.form__pod .form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 15px;
+}
+.form__pod .form-group {
+  position: relative;
+  margin-top: 24px;
+}
+.form__pod .actions {
+  margin-top: 40px;
+  text-align: center;
+}
+.form__pod .actions--right {
+  text-align: right;
+}
+.form__pod .form-group input {
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  height: 24px;
+  padding-bottom: 5px;
+  color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+}
+.form__pod .form-group textarea {
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  height: 24px;
+  resize: none;
+  padding-bottom: 3px;
+  color: #2b2b2b;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+}
+.form__pod .form-group label {
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: 2px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: white;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.form__pod .form-group input:valid,
+.form__pod .form-group input:focus,
+.form__pod .form-group textarea:valid,
+.form__pod .form-group textarea:focus {
+  border-bottom-color: #f39522;
+  outline: none;
+}
+.form__pod .form-group input:valid + label,
+.form__pod .form-group input:focus + label,
+.form__pod .form-group textarea:valid + label,
+.form__pod .form-group textarea:focus + label {
+  font-size: 11px;
+  transform: translateY(-18px);
 }
 
 .contact__info {

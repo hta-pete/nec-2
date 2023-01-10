@@ -1,0 +1,166 @@
+/* ——————————————————————
+
+Drivers
+
+——————————————————————— */
+.shippers__info{
+  padding:60px 0 0 0;
+  .col{
+    max-height:750px;
+  }
+}
+.shippers__info-intro{
+  padding:90px 30px;
+  //max-width:480px;
+}
+.shippers__info-intro__mini-gallery{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:15px;
+  img{
+    display:block;
+    width:100%;
+    height:auto;
+    &:first-child{
+      border-radius:0 0 0 20px;
+    }
+    &:last-child{
+      border-radius:0 20px 0 0;
+    }
+  }
+}
+.shippers__info-benefits{
+  padding:90px 0 120px 0;
+  li{
+    position:relative;
+    display:block;
+    margin-bottom:20px;
+    font-size:15px;
+    line-height:1.35;
+    margin-left:20px;
+    &:before{
+      content:"";
+      position:absolute;
+      display:block;
+      top:8px;
+      left:-20px;
+      width:10px;
+      height:3px;
+      background:$orange;
+      margin-bottom:5px;
+    }
+  }
+	
+}
+
+.shippers__bullets{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  .col{
+		padding:25px 0;
+		border-right:0.5px solid $border_light;
+		&:last-child{
+			border:none;
+		}
+		h3{
+			font-size:14px;
+			margin-top:0.5em;
+			color:$secondary;
+		}
+	}
+}
+
+.request__pod{
+  padding:0 0 0 12vw;
+  color:white;
+}
+.request__pod-inner{
+  padding:120px 0 120px 8vw;
+  background-color:$secondary;
+  //background-image:url('../img/apply-cta-bg.jpg');
+  //background-repeat: no-repeat;
+  //background-position: left center;
+  //background-size:auto 100%;
+  p{
+    color:inherit;
+    max-width:400px;
+    margin-inline: auto;
+  }
+}
+
+
+.form__pod{
+  margin-top:15px;
+  .form_grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:0 15px;
+  }
+  .form-group {
+    position: relative;
+    margin-top:24px;
+  }
+  .actions{
+    margin-top:40px;
+    text-align:center;
+    &--right{
+      text-align:right;
+    }
+  }
+  .form-group input {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    height:24px;
+    padding-bottom:5px;
+    color: white;
+    background:transparent;
+    border: none;
+    border-bottom: 1px solid white;
+  }
+  .form-group textarea {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    height:24px;
+    resize:none;
+    padding-bottom:3px;
+    color: $primary;
+    background:transparent;
+    border: none;
+    border-bottom: 1px solid $border_light;
+  }
+
+  .form-group label {
+    display:block;
+    position: absolute;
+    top: -4px;
+    left: 2px;
+    height:24px;
+    line-height:24px;
+    font-size: 14px;
+    color: white;
+    pointer-events: none;
+    transform: translateY(0);
+    transition: all 0.4s $easeOutExpo;
+  }
+
+  .form-group input:valid,
+  .form-group input:focus,
+  .form-group textarea:valid,
+  .form-group textarea:focus {
+      border-bottom-color: $orange;
+      outline: none;
+  }
+
+  .form-group input:valid + label,
+  .form-group input:focus + label,
+  .form-group textarea:valid + label,
+  .form-group textarea:focus + label {
+      font-size: 11px;
+      transform: translateY(-18px);
+  }
+}
+
+
+
