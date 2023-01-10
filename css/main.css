@@ -1719,6 +1719,10 @@ Drivers
 .request__pod-inner {
   padding: 120px 0 120px 8vw;
   background-color: #8a8a8a;
+  background-image: url("../img/request-pod-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 100%;
 }
 .request__pod-inner p {
   color: inherit;
